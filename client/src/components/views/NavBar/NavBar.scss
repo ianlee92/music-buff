@@ -1,0 +1,52 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.nav-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background: white;
+    list-style-type: none;
+    position: fixed;
+    margin: 0 auto;
+    box-sizing: border-box;
+    max-width: 1240px;
+    padding-left: 20px;
+    padding-right: 20px;
+    top: 0;
+}
+
+.nav-item {
+    padding: 15px;
+    cursor: pointer;
+}
+
+header {
+  margin-top: 80px;
+}
+
+.nav-item a {
+    text-align:center;
+    text-decoration: none;
+    
+    color: white;
+}
+
+.nav-item:nth-child(1) {
+    background: -webkit-linear-gradient(rgba(2,0,36,1) 0%, rgba(255,82,189,1) 35%, rgba(0,212,255,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font: 'Noto Sans KR';
+}
+
+.nav-item:hover {
+    background: -webkit-linear-gradient(rgba(2,0,36,1) 0%, rgba(255,82,189,1) 35%, rgba(0,212,255,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font: 'Noto Sans KR';
+}
