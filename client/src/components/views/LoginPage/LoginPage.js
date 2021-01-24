@@ -17,7 +17,6 @@ function LoginPage(props) {
 
     const onSubmitHandler = (event) => {
         event.preventDefault(); // 리프레쉬 방지
-
         let body = {
             email: Email,
             password: Password
@@ -32,7 +31,7 @@ function LoginPage(props) {
                 }
             })
     }
-    
+
     return (
         <div style={{
             display: 'flex', justifyContent: 'center', alignItems: 'center'
