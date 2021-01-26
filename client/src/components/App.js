@@ -6,10 +6,11 @@ import RegisterPage from './views/RegisterPage/RegisterPage';
 import Auth from '../hoc/auth'
 import NavBar from "./views/NavBar/NavBar";
 import Footer from "./views/Footer/Footer";
+import {LoadingOutlined} from '@ant-design/icons';
 
 function App() {
   return (
-    <Suspense fallback={(<div>Loading...</div>)}>
+    <Suspense fallback={(<div><LoadingOutlined />Loading...</div>)}>
       <NavBar />
         <div>
           <Switch>

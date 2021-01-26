@@ -1,0 +1,90 @@
+$maincolor: #F5dF4D;
+$subcolor: #939597;
+
+.login-field {
+    width: 100%;
+    max-width: 400px;
+    min-height: 100%;
+    text-align: center;
+    margin: 0px auto;
+}
+
+.login-header {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.login-form{
+    width: 100%;
+}
+
+.login-title{
+    float: left;
+    font-size: 20px;
+    line-height: 32px;
+}
+
+.login-content{
+    padding-top: 20px;
+    display: block;
+    float: left;
+    font-size: 14px;
+    line-height: 17px;
+    padding-bottom: 12px;
+}
+
+#loginId {
+    font-size: 14px;
+    line-height: 23px;
+    width: 100%;
+    height: 45px;
+    border: 1px solid #ddd;
+}
+
+#loginPwd {
+    @extend #loginId;
+}
+
+.login-row {
+    width: 100%;
+}
+
+.login-btnWrapper {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+@mixin btn() {
+    box-sizing: border-box;
+    border: 1px solid $maincolor;
+    text-align: center;
+    display: inline-block;
+    padding: 1em 1.75em;
+    white-space: nowrap;
+    line-height: normal;
+    cursor: pointer;
+    width: 100%;
+    max-width: 240px;
+    height: 54px;
+    font-size: 14px;
+    min-width: 160px;
+    min-height: 54px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    outline: none;
+}
+
+.login-btn {
+    @include btn();
+    color: $maincolor;
+    background-color: white;
+    transition:all .2s;
+}
+
+.login-btn:hover {
+    @include btn();
+    color: white;
+    background-color: $maincolor;
+}

@@ -1,75 +1,105 @@
-.site-division-background {
-  display: flex;
+$maincolor: #F5dF4D;
+$subcolor: #939597;
+
+.header-division-background {
+  display: table-cell;
   flex-direction: row;
-  width: 100%;
   position: fixed;
-  height:155px;
-  margin: 0 auto;
+  height: 165px;
+  width: 100%;
   box-sizing: border-box;
-  padding-left: 20px;
-  padding-right: 20px;
   top: 0;
   background-color: white;
 }
 
-.column-header-left{
-  //background-color: yellow;
-  height:155px;
-  width: 20%;
+.column-header-center{
+  clear: left;
+  //background-color:yellowgreen;
+  width: 100%;
 }
 
-.column-header-center{
-  //background-color:yellowgreen;
-  height:155px;
-  width: 90%;
-}
 .column-header-center-logo{
-  height:90px;
-  text-align:center;
+  clear: left;
+  height: 90px;
+  text-align: center;
   margin-top: 10px;
 }
 
 .column-header-center-menu{
-  height:55px;
-  text-align:center;
+  clear: left;
+  height: 55px;
+  text-align: center;
+  margin-top: 15px;
   //background-color:hotpink;
+  float: left;
+  width: 100%;
 }
 
 .nav-container{
-  height:55px;
-  float:left;
-  text-align:center;
-  width: 100%;
-  padding:0;
-  margin-top:15px;
-}
-
-.column-header-right{
-  //background-color: green;
-  height:155px;
-  width: 20%;
+  height: 55px;
+  text-align: center;
+  padding: 0;
+  margin-top: 15px;
+  margin-left: 170px;
 }
 
 .nav-item {
-  display:inline-block;
-  text-align:center;
-  margin-left:5px;
+  display: inline-block;
+  text-align: center;
+  margin-left: 8px;
   padding: 15px 15px 10px 0px;
   cursor: pointer;
-  color:#939597;
+  color: $subcolor;
   font: italic 1.2em "Fira Sans", serif;
-  font-size:12px;
+  font-size: 12px;
   vertical-align: middle;
   text-align: center;
   list-style-type: none;
 }
 
 .nav-item:nth-child(1) {
-  color:#F5dF4D;
+  color: $maincolor;
 }
 
 .nav-item:hover {
-  color:#F5dF4D;
+  color: $maincolor;
   vertical-align: middle;
   text-align: center;
+}
+
+.column-header-right{
+  //background-color: green;
+  text-align: right;
+  padding-top: 9px;
+  padding-right: 100px;
+  float: right;
+}
+
+.icon-item {
+  display: inline-block;
+  cursor: pointer;
+  color: $subcolor;
+  font-size: 12px;
+  list-style-type: none;
+}
+
+.icon-item:hover {
+  color: $maincolor;
+}
+
+.icon-item a {
+  display: inline-block;
+  cursor: pointer;
+  margin-top: 0px;
+  color: $subcolor;
+  font-size: 12px;
+  list-style-type: none;
+}
+
+.icon-item a:hover {
+  @extend .icon-item:hover
+}
+
+.icon-container{
+  padding: 0px;
 }
