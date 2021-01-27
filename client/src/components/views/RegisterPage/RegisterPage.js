@@ -62,7 +62,7 @@ function RegisterPage(props) {
                 </div>
 
                 <div class="regsiter-row">
-                    <span class="register-content">이메일</span>
+                    <span class="register-content">이메일 *</span>
                     <br />
                     <input id="registerId" type="email" value={Email} onChange={onEmailHandler} />
                     <br />
@@ -76,14 +76,14 @@ function RegisterPage(props) {
                 </div>
 
                 <div class="regsiter-row">
-                    <span class="register-content">비밀번호</span>
+                    <span class="register-content">비밀번호 *</span>
                     <br />
-                    <input id="registerPwd" type="password" value={Password} onChange={onPasswordHandler} />
+                    <input id="registerPwd" type="password" placeholder="  비밀번호는 6자리 이상이어야 합니다."value={Password} onChange={onPasswordHandler} />
                     <br />
                 </div>
 
                 <div class="regsiter-row">
-                    <span class="register-content">비밀번호 확인</span>
+                    <span class="register-content">비밀번호 확인 *</span>
                     <br />
                     <input id="registerPwdConfirm" type="password" value={ConfirmPassword} onChange={onConfirmPasswordHandler} />
                     <br />
