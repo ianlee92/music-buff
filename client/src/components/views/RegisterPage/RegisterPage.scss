@@ -1,7 +1,7 @@
 $maincolor: #F5dF4D;
 $subcolor: #939597;
 
-.login-field {
+.register-field {
     width: 100%;
     max-width: 400px;
     min-height: 100%;
@@ -9,22 +9,22 @@ $subcolor: #939597;
     margin: 0px auto;
 }
 
-.login-header {
+.register-header {
     width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
-.login-form{
+.register-form{
     width: 100%;
 }
 
-.login-title{
+.register-title{
     float: left;
     font-size: 20px;
     line-height: 32px;
 }
 
-.login-content{
+.register-content{
     padding-top: 20px;
     display: block;
     float: left;
@@ -33,7 +33,7 @@ $subcolor: #939597;
     padding-bottom: 12px;
 }
 
-#loginId {
+#registerId {
     font-size: 14px;
     line-height: 23px;
     width: 100%;
@@ -41,15 +41,23 @@ $subcolor: #939597;
     border: 1px solid #ddd;
 }
 
-#loginPwd {
-    @extend #loginId;
+#registerName {
+    @extend #registerId;
 }
 
-.login-row {
+#registerPwd {
+    @extend #registerId;
+}
+
+#registerPwdConfirm {
+    @extend #registerId;
+}
+
+.register-row {
     width: 100%;
 }
 
-.login-btnWrapper {
+.register-btnWrapper {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 10px;
@@ -76,20 +84,15 @@ $subcolor: #939597;
     outline: none;
 }
 
-.login-btn {
+.register-btn {
     @include btn();
     color: $maincolor;
     background-color: white;
     transition:all .2s;
 }
 
-.login-btn:hover {
+.register-btn:hover {
     @include btn();
     color: white;
     background-color: $maincolor;
-}
-
-.register-btnWrapper {
-    max-width: 400px;
-    width: 100%;
 }

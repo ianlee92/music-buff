@@ -7,12 +7,13 @@ import Auth from '../hoc/auth'
 import NavBar from "./views/NavBar/NavBar";
 import Footer from "./views/Footer/Footer";
 import {LoadingOutlined} from '@ant-design/icons';
+import "./App.scss";
 
 function App() {
   return (
     <Suspense fallback={(<div><LoadingOutlined />Loading...</div>)}>
       <NavBar />
-        <div>
+        <div className="content-background">
           <Switch>
             <Route exact path="/" component={Auth(LandingPage, null)} />
             <Route exact path="/login" component={Auth(LoginPage, false)} />

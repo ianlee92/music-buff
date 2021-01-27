@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import { useDispatch } from 'react-redux';
 import { registerUser } from '../../../_actions/user_action';
+import { withRouter } from 'react-router-dom';
+import "./RegisterPage.scss";
 
 function RegisterPage(props) {
     const dispatch = useDispatch();
@@ -48,29 +50,50 @@ function RegisterPage(props) {
     }
 
     return (
-        <div style={{
+        <div class="register-field" style={{
             display: 'flex', justifyContent: 'center', alignItems: 'center'
             ,width: '100%', height: '100vh'
         }}>
-            <form style={{display:'flex', flexDirection:'column'}}
+            <form class="register-form" style={{display:'flex', flexDirection:'column'}}
                 onSubmit={onSubmitHandler}
             >
-                <label>Email</label>
-                <input type="email" value={Email} onChange={onEmailHandler} />
-                <br />
-                <label>Name</label>
-                <input type="text" value={Name} onChange={onNameHandler} />
-                <br />
-                <label>Password</label>
-                <input type="password" value={Password} onChange={onPasswordHandler} />
-                <br />
-                <label>Confirm Password</label>
-                <input type="password" value={ConfirmPassword} onChange={onConfirmPasswordHandler} />
-                <br />
-                <button>회원 가입</button>
+                <div class="register-header">
+                    <span class="register-title">회원가입</span>
+                </div>
+
+                <div class="regsiter-row">
+                    <span class="register-content">이메일</span>
+                    <br />
+                    <input id="registerId" type="email" value={Email} onChange={onEmailHandler} />
+                    <br />
+                </div>
+
+                <div class="regsiter-row">
+                    <span class="register-content">성명</span>
+                    <br />
+                    <input id="registerName" type="text" value={Name} onChange={onNameHandler} />
+                    <br />
+                </div>
+
+                <div class="regsiter-row">
+                    <span class="register-content">비밀번호</span>
+                    <br />
+                    <input id="registerPwd" type="password" value={Password} onChange={onPasswordHandler} />
+                    <br />
+                </div>
+
+                <div class="regsiter-row">
+                    <span class="register-content">비밀번호 확인</span>
+                    <br />
+                    <input id="registerPwdConfirm" type="password" value={ConfirmPassword} onChange={onConfirmPasswordHandler} />
+                    <br />
+                </div>
+                <div class="register-btnWrapper">
+                    <button class="register-btn">회원 가입</button>
+                </div>
             </form>
         </div>
     )
 }
 
-export default RegisterPage
+export default withRouter(RegisterPage)

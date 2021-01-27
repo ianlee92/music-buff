@@ -59,9 +59,12 @@ function LoginPage(props) {
                     <button class="login-btn">로그인하기</button>
                 </div>
                 <div class="register-btnWrapper">
-                    <button class="login-btn">회원가입하기</button>
+                    <a class="btn_signup" href="/register">
+                        <button type="button" class="login-btn">회원가입하기</button>
+                    </a>
                 </div>
             </form>
+                
         </div>
     )
 }
