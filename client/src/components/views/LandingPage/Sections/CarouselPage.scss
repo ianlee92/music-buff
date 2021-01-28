@@ -1,7 +1,7 @@
 .container {
   padding: 40px;
   width: 50%;
-  display:contents;
+  display: relative;
 }
 
 .slick-slide img {
@@ -9,5 +9,5 @@
   // height: 500px;
   max-width: 100%;
   height: auto;
-  margin: auto;
+  margin: 0 auto;
 }

@@ -20,7 +20,6 @@ function App() {
   return (
     <Suspense fallback={(<div><LoadingOutlined />Loading...</div>)}>
       <NavBar />
-        <div className="content-background">
           <Switch>
             <Route exact path="/" component={Auth(LandingPage, null)} />
             <Route exact path="/login" component={Auth(LoginPage, false)} />
@@ -33,7 +32,6 @@ function App() {
             <Route exact path="/book" component={Auth(BookPage, null)} />
             <Route exact path="/goods" component={Auth(GoodsPage, null)} />
           </Switch>
-        </div>
       <Footer />
     </Suspense>
   );

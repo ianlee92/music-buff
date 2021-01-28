@@ -2,7 +2,6 @@ $maincolor: #F5dF4D;
 $subcolor: #939597;
 
 .header-division-background {
-  display: table-cell;
   flex-direction: row;
   position: fixed;
   height: 165px;
@@ -23,6 +22,7 @@ $subcolor: #939597;
   height: 90px;
   text-align: center;
   margin-top: 10px;
+  padding-right:40px;
 }
 
 .column-header-center-menu{
