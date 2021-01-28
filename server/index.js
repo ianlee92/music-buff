@@ -6,26 +6,18 @@ const config = require('./config/key');
 const cookieParser = require('cookie-parser');
 const { auth } = require('./middleware/auth');
 const { User } = require('./models/User');
+const { Product } = require('./models/Producet');
 
 app.use(bodyParser.urlencoded({extended: true}));
 // application/json
 app.use(bodyParser.json());
 app.use(cookieParser());
 
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 mongoose.connect(config.mongoURI, {
     useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false
 }).then(()=>console.log('MongoDB Connected...'))
 .catch(err => console.log(err))
-
-
-
-app.get('/', (req, res) => res.send('Hello World! 안녕하세요 ~ HAPPY NEW YEAR'))
-
-app.get('/api/hello', (req,res)=>{
-
-    res.send("안녕하세요 ㅋ")
-})
 
 app.post('/api/users/register', (req, res) => {
     // 회원가입할때 필요한 정보들을 client에서 가져오면
@@ -90,6 +82,14 @@ app.get('/api/users/logout', auth, (req, res) => {
             return res.status(200).send({
                 success: true
             })
+        })
+})
+
+app.post('/api/product/products', (req, res) => {
+    Product.find()
+        .exec((err, productInfo) => {
+            if(err) return res.status(400).json({ success: false, err})
+            return res.status(200).json({success:true, productInfo})
         })
 })
 
