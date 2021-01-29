@@ -15,6 +15,7 @@ function BookPage() {
                 }
             })
     }, [])
+    console.log(Product)
 
     return (
         <div style={{ width: '100%', textAlign: 'center'}}>
@@ -22,7 +23,7 @@ function BookPage() {
             <div class="product-site-Wrap">
                 {Product.filter(product =>(product.sort===6)).map((product, index) => {
                     return <div class="productWrapper" key={index}>
-                                <a class="productLink" href="#" alt="">
+                                <a class="productLink" href={`/book/${product._id}`} alt="">
                                     <div class="thumbDiv">
                                         <div class="thumbImg">
                                             <img class="imgSize2" src={product.images[0]} style={{width:'300px', hieght:'300px'}} />

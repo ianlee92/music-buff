@@ -22,7 +22,7 @@ function MagazinePage() {
             <div class="product-site-Wrap">
                 {Product.filter(product =>(product.sort===5)).map((product, index) => {
                     return <div class="productWrapper" key={index}>
-                                <a class="productLink" href="#" alt="">
+                                <a class="productLink" href={`/magazine/${product._id}`} alt="">
                                     <div class="thumbDiv">
                                         <div class="thumbImg">
                                             <img class="imgSize2" src={product.images[0]} style={{width:'300px', hieght:'300px'}} />

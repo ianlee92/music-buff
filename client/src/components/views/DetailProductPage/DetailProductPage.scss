@@ -1,0 +1,130 @@
+.productContentDetail{
+    width:100%;
+}
+.product-detail-start{
+    margin-top:220px;
+}
+
+.product-detail-Wrap{
+    padding: 0px 0px 0px 0px;
+    height: 100%;
+}
+
+.productDetailWrapper{
+    margin: 0 auto;
+    max-width: 960px;
+    position:relative;
+    height:100%;
+    //background-color: aquamarine;
+}
+
+.detailThumbDiv{
+    width:50%;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    height:1000px;
+    //background-color: aquamarine;
+}
+
+.detailThumbImg{
+
+}
+
+.detailImgSize{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.productDetailInfo{
+    width: 50%;
+    position: relative;
+    text-align: left;
+    padding-top: 10px;
+    float: left;
+    //background-color: yellowgreen;
+    height:1000px;
+}
+
+.productDetailName{
+    font-size:25px;
+    line-height: 1.2em;
+    color: #222222;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:700;
+    letter-spacing: 0.01em;
+    text-align: left;
+    margin-bottom: 20px;
+    padding-left: 50px;
+}
+
+.productDetailPrice{
+    margin-bottom:20px;
+    font-size:22px;
+    line-height: 1.2em;
+    color: #121111;
+    font-family: Arial, sans-serif;
+    font-weight:700;
+    letter-spacing: 0.01em;
+    text-align: left;
+    padding-left: 50px;
+}
+
+.delivery{
+    padding-left: 50px;
+}
+
+.count{
+    @extend .delivery;
+    margin-top:30px;
+}
+
+.countButton{
+    @extend .count;
+}
+
+.countButton button{
+    font-size:26px; 
+    border:black solid 1px; 
+    background:none;
+}
+
+.countButton input{
+    font-size:26px; 
+    border:black solid 1px; 
+    background:none;
+    width:40px;
+    margin-left:10px;
+    margin-right:10px;
+}
+
+.productDescriptionTitle{
+    font-size:14px;
+    line-height: 1.2em;
+    color: #121111;
+    font-family: Arial, sans-serif;
+    font-weight:700;
+    letter-spacing: 0.01em;
+    text-align: left;
+}
+
+.deliverySub{
+    font-size:12px;
+    line-height: 1.2em;
+    color: #121111;
+    font-family: Arial, sans-serif;
+    font-weight:500;
+    padding-left:30px;
+    letter-spacing: 0.01em;
+    text-align: left;
+}
+
+.proudctDetailPriceSpan{
+
+}
+
+.product-detail-end{
+    margin-bottom:130px;
+}

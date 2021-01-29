@@ -44,17 +44,23 @@
 }
 
 .imgSize1{
-    width: 300px;
-    height: 300px;
+    //width: 300px;
+    //height: 300px;
     transform: scale(0.9);        
     transition: transform .5s;
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 .imgSize2{
-    width: 369px;
-    height: 333px;
+    //width: 369px;
+    //height: 333px;
     transform: scale(0.9);        
     transition: transform .5s; 
+    max-width: 100%;
+    height: 333px;
+    display: block;
 }
 
 .imgSize1:hover {

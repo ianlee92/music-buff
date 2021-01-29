@@ -13,6 +13,7 @@ import LpPage from './views/LpPage/LpPage';
 import MagazinePage from './views/MagazinePage/MagazinePage';
 import BookPage from './views/BookPage/BookPage';
 import GoodsPage from './views/GoodsPage/GoodsPage';
+import DetailProductPage from './views/DetailProductPage/DetailProductPage';
 import {LoadingOutlined} from '@ant-design/icons';
 import "./App.scss";
 
@@ -25,12 +26,19 @@ function App() {
             <Route exact path="/login" component={Auth(LoginPage, false)} />
             <Route exact path="/register" component={Auth(RegisterPage, false)} />
             <Route exact path="/turntable" component={Auth(TurntablePage, null)} />
+            <Route exact path="/turntable/:productId" component={Auth(DetailProductPage, null)} />
             <Route exact path="/new" component={Auth(NewPage, null)} />
+            <Route exact path="/new/:productId" component={Auth(DetailProductPage, null)} />
             <Route exact path="/cd" component={Auth(CdPage, null)} />
+            <Route exact path="/cd/:productId" component={Auth(DetailProductPage, null)} />
             <Route exact path="/lp" component={Auth(LpPage, null)} />
+            <Route exact path="/lp/:productId" component={Auth(DetailProductPage, null)} />
             <Route exact path="/magazine" component={Auth(MagazinePage, null)} />
+            <Route exact path="/magazine/:productId" component={Auth(DetailProductPage, null)} />
             <Route exact path="/book" component={Auth(BookPage, null)} />
+            <Route exact path="/book/:productId" component={Auth(DetailProductPage, null)} />
             <Route exact path="/goods" component={Auth(GoodsPage, null)} />
+            <Route exact path="/goods/:productId" component={Auth(DetailProductPage, null)} />
           </Switch>
       <Footer />
     </Suspense>

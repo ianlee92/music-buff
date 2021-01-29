@@ -93,6 +93,18 @@ app.post('/api/product/products', (req, res) => {
         })
 })
 
+// axios.get(`/api/product/products_by_id?id=${productId}&type=single`)
+
+app.get('/api/product/products_by_id', (req, res) => {
+    //let type = req.query.type
+    let productId = req.query._id
+    Product.find({ _id: productId })
+        .populate('sort')
+        .exec((err, product) => {
+            if(err) return res.status(400).send(err)
+            return res.status(200).send({success:true, product})
+        })
+})
 
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
