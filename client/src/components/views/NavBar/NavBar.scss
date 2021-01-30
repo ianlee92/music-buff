@@ -11,10 +11,17 @@ $subcolor: #939597;
   background-color: white;
 }
 
+.header-division-background hr{
+  border-top: 1px dashed #bbb;
+  //border-top: 1px dotted #bbb;
+  background-color: white;
+}
+
 .column-header-center{
   clear: left;
   //background-color:yellowgreen;
   width: 100%;
+  background-color: white;
 }
 
 .column-header-center-logo{
@@ -23,6 +30,7 @@ $subcolor: #939597;
   text-align: center;
   margin-top: 10px;
   padding-right:40px;
+  background-color: white;
 }
 
 .column-header-center-menu{
@@ -33,6 +41,7 @@ $subcolor: #939597;
   //background-color:hotpink;
   float: left;
   width: 100%;
+  background-color: white;
 }
 
 .nav-container{
