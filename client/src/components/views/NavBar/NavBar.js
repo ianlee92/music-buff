@@ -1,6 +1,7 @@
 import React from 'react'
 import './NavBar.scss';
 import RightMenu from './Sections/RightMenu'
+import SearchMenu from './Sections/SearchMenu'
 
 function NavBar() {
     return (
@@ -20,7 +21,8 @@ function NavBar() {
                         <a href="/book"><li class="nav-item">BOOK</li></a>
                         <a href="/goods"><li class="nav-item">GOODS</li></a>
                         <div class="column-header-right">
-                            <RightMenu />
+                            {/* <RightMenu /> */}
+                            <SearchMenu />
                         </div>
                     </ul>
                 </div>

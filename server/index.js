@@ -86,11 +86,26 @@ app.get('/api/users/logout', auth, (req, res) => {
 })
 
 app.post('/api/product/products', (req, res) => {
-    Product.find()
+    let limit = req.body.limit ? parseInt(req.body.limit) : 20;
+    let skip = req.body.skip ? parseInt(req.body.skip) : 0;
+    let term = req.body.searchTerm
+    let findArgs = {};
+    if (term) {
+        Product.find(findArgs)
+        .find({ $text: { $search: term }})
+        .skip(skip)
+        .limit(limit)
         .exec((err, productInfo) => {
             if(err) return res.status(400).json({ success: false, err})
             return res.status(200).json({success:true, productInfo})
         })
+    } else {
+        Product.find()
+        .exec((err, productInfo) => {
+            if(err) return res.status(400).json({ success: false, err})
+            return res.status(200).json({success:true, productInfo})
+        })
+    }
 })
 
 // axios.get(`/api/product/products_by_id?id=${productId}&type=single`)

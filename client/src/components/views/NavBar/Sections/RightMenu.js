@@ -31,8 +31,7 @@ function RightMenu(props) {
             
         )
     } else { // 로그인 상태
-        return (
-            
+        return (    
                 <ul class="icon-container">
                     <li class="icon-item"><SearchOutlined style={{fontSize:'20px'}}/></li>
                     <li class="icon-item"><UserOutlined style={{fontSize:'20px', marginLeft:'10px'}}/></li>

@@ -112,3 +112,10 @@ $subcolor: #939597;
 .icon-container{
   padding: 0px;
 }
+
+.searchBar {
+  border:none;
+  border-bottom: 1px solid black;
+  display:flex;
+  justify-content: flex-end;
+}
