@@ -50,46 +50,46 @@ function RegisterPage(props) {
     }
 
     return (
-        <div class="register-field" style={{
+        <div className="register-field" style={{
             display: 'flex', justifyContent: 'center', alignItems: 'center'
             ,width: '100%', height: '100vh'
         }}>
-            <form class="register-form" style={{display:'flex', flexDirection:'column'}}
+            <form className="register-form" style={{display:'flex', flexDirection:'column'}}
                 onSubmit={onSubmitHandler}
             >
-                <div class="register-header">
-                    <span class="register-title">회원가입</span>
+                <div className="register-header">
+                    <span className="register-title">회원가입</span>
                 </div>
 
-                <div class="regsiter-row">
-                    <span class="register-content">이메일 *</span>
+                <div className="regsiter-row">
+                    <span className="register-content">이메일 *</span>
                     <br />
                     <input id="registerId" type="email" value={Email} onChange={onEmailHandler} />
                     <br />
                 </div>
 
-                <div class="regsiter-row">
-                    <span class="register-content">성명</span>
+                <div className="regsiter-row">
+                    <span className="register-content">성명</span>
                     <br />
                     <input id="registerName" type="text" value={Name} onChange={onNameHandler} />
                     <br />
                 </div>
 
-                <div class="regsiter-row">
-                    <span class="register-content">비밀번호 *</span>
+                <div className="regsiter-row">
+                    <span className="register-content">비밀번호 *</span>
                     <br />
                     <input id="registerPwd" type="password" placeholder="  비밀번호는 6자리 이상이어야 합니다."value={Password} onChange={onPasswordHandler} />
                     <br />
                 </div>
 
-                <div class="regsiter-row">
-                    <span class="register-content">비밀번호 확인 *</span>
+                <div className="regsiter-row">
+                    <span className="register-content">비밀번호 확인 *</span>
                     <br />
                     <input id="registerPwdConfirm" type="password" value={ConfirmPassword} onChange={onConfirmPasswordHandler} />
                     <br />
                 </div>
-                <div class="register-btnWrapper">
-                    <button class="register-btn">회원 가입</button>
+                <div className="register-btnWrapper">
+                    <button className="register-btn">회원 가입</button>
                 </div>
             </form>
         </div>

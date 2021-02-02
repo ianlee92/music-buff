@@ -23,20 +23,21 @@ function RightMenu(props) {
 
     if(!user.loginSuccess){ // 로그아웃 상태
         return (
-                <ul class="icon-container">
-                    <li class="icon-item"><SearchOutlined style={{fontSize:'20px'}}/></li>
-                    <li class="icon-item"><a href="/login"><LockOutlined style={{fontSize:'20px', marginLeft:'10px'}}/></a></li>
-                    <li class="icon-item" onClick={logoutHandler}><UnlockOutlined style={{fontSize:'20px', marginLeft:'10px'}}/></li>
+                <ul className="icon-container">
+                    <li className="icon-item"><a href="/search"><SearchOutlined style={{fontSize:'20px'}}/></a></li>
+                    <li className="icon-item"><a href="/user/cart"><ShoppingCartOutlined style={{fontSize:'20px', marginLeft:'10px'}}/></a></li>
+                    <li className="icon-item"><a href="/login"><LockOutlined style={{fontSize:'20px', marginLeft:'10px'}}/></a></li>
+                    <li className="icon-item" onClick={logoutHandler}><UnlockOutlined style={{fontSize:'20px', marginLeft:'10px'}}/></li>
                 </ul>
             
         )
     } else { // 로그인 상태
         return (    
-                <ul class="icon-container">
-                    <li class="icon-item"><SearchOutlined style={{fontSize:'20px'}}/></li>
-                    <li class="icon-item"><UserOutlined style={{fontSize:'20px', marginLeft:'10px'}}/></li>
-                    <li class="icon-item"><ShoppingCartOutlined style={{fontSize:'20px', marginLeft:'10px'}}/></li>
-                    <li class="icon-item" onClick={logoutHandler}><UnlockOutlined style={{fontSize:'20px', marginLeft:'10px'}}/></li>
+                <ul className="icon-container">
+                    <li className="icon-item"><a href="/search"><SearchOutlined style={{fontSize:'20px'}}/></a></li>
+                    <li className="icon-item"><UserOutlined style={{fontSize:'20px', marginLeft:'10px'}}/></li>
+                    <li className="icon-item"><a href="/user/cart"><ShoppingCartOutlined style={{fontSize:'20px', marginLeft:'10px'}}/></a></li>
+                    <li className="icon-item" onClick={logoutHandler}><UnlockOutlined style={{fontSize:'20px', marginLeft:'10px'}}/></li>
                 </ul>
      
         )

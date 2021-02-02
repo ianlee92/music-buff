@@ -14,6 +14,8 @@ import MagazinePage from './views/MagazinePage/MagazinePage';
 import BookPage from './views/BookPage/BookPage';
 import GoodsPage from './views/GoodsPage/GoodsPage';
 import DetailProductPage from './views/DetailProductPage/DetailProductPage';
+import CartPage from './views/CartPage/CartPage';
+import SearchPage from './views/SearchPage/SearchPage';
 import {LoadingOutlined} from '@ant-design/icons';
 import "./App.scss";
 
@@ -39,6 +41,9 @@ function App() {
             <Route exact path="/book/:productId" component={Auth(DetailProductPage, null)} />
             <Route exact path="/goods" component={Auth(GoodsPage, null)} />
             <Route exact path="/goods/:productId" component={Auth(DetailProductPage, null)} />
+            <Route exact path="/user/cart" component={Auth(CartPage, true)} />
+            <Route exact path="/search" component={Auth(SearchPage, null)} />
+            
           </Switch>
       <Footer />
     </Suspense>

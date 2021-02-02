@@ -1,0 +1,36 @@
+.search-division{
+    padding-top:250px;
+    padding-bottom:30px;
+}
+
+.search-container{
+    border:#939597 solid 1px;
+    margin: 0 auto;
+    max-width: 800px;
+    position:relative;
+    text-align: center;
+    height:60px;
+    background-color: white;
+}
+
+.search-icon{
+    float:left;
+    margin-left:12px;
+    padding-top:7px;
+    color: #939597;
+    font-size: 40px;
+    vertical-align:middle;
+}
+
+.search-bar{
+    float:flex;
+}
+
+.searchBar{
+    margin-left:70px;
+    width: 90%;
+    height: 58px;
+    border:none;
+    font-size: 14px;
+    line-height: 23px;
+}

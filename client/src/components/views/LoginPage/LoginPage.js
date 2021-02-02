@@ -35,32 +35,32 @@ function LoginPage(props) {
     }
 
     return (
-        <div class="login-field" style={{
+        <div className="login-field" style={{
             display: 'flex', justifyContent: 'center', alignItems: 'center'
             ,width: '100%', height: '100vh'
         }}>
-            <form class="login-form" onSubmit={onSubmitHandler}>
-                <div class="login-header">
-                    <span class="login-title">로그인</span>
+            <form className="login-form" onSubmit={onSubmitHandler}>
+                <div className="login-header">
+                    <span className="login-title">로그인</span>
                 </div>
-                <div class="login-row">
-                    <span class="login-content">이메일</span>
+                <div className="login-row">
+                    <span className="login-content">이메일</span>
                     <br />
                     <input id="loginId" type="email" value={Email} onChange={onEmailHandler} />
                     <br />
                 </div>
-                <div class="login-row">
-                    <span class="login-content">비밀번호</span>
+                <div className="login-row">
+                    <span className="login-content">비밀번호</span>
                     <br />
                     <input id="loginPwd" type="password" value={Password} onChange={onPasswordHandler} />
                     <br />
                 </div>
-                <div class="login-btnWrapper">
-                    <button class="login-btn">로그인하기</button>
+                <div className="login-btnWrapper">
+                    <button className="login-btn">로그인하기</button>
                 </div>
-                <div class="register-btnWrapper">
-                    <a class="btn_signup" href="/register">
-                        <button type="button" class="login-btn">회원가입하기</button>
+                <div className="register-btnWrapper">
+                    <a className="btn_signup" href="/register">
+                        <button type="button" className="login-btn">회원가입하기</button>
                     </a>
                 </div>
             </form>

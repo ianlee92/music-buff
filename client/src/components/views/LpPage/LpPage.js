@@ -18,25 +18,25 @@ function LpPage() {
 
     return (
         <div style={{ width: '100%', textAlign: 'center'}}>
-            <div class="product-start"></div>
-            <div class="product-site-Wrap">
+            <div className="product-start"></div>
+            <div className="product-site-Wrap">
                 {Product.filter(product =>(product.sort===3)).map((product, index) => {
-                    return <div class="productWrapper" key={index}>
-                                <a class="productLink" href={`/lp/${product._id}`} alt="">
-                                    <div class="thumbDiv">
-                                        <div class="thumbImg">
-                                            <img class="imgSize1" src={product.images[0]} style={{width:'300px', hieght:'300px'}} />
+                    return <div className="productWrapper" key={index}>
+                                <a className="productLink" href={`/lp/${product._id}`} alt="">
+                                    <div className="thumbDiv">
+                                        <div className="thumbImg">
+                                            <img className="imgSize1" src={product.images[0]} style={{width:'300px', hieght:'300px'}} />
                                         </div>
                                     </div>
-                                    <div class="productInfo">
-                                        <div class="productName">{product.title}</div>
-                                        <div class="productPrice"><span class="proudctPriceSpan">{product.price}원</span></div>
+                                    <div className="productInfo">
+                                        <div className="productName">{product.title}</div>
+                                        <div className="productPrice"><span className="proudctPriceSpan">{product.price}원</span></div>
                                     </div>
                                 </a>
                             </div>
                 })}
             </div>
-            <div class="product-end"></div>
+            <div className="product-end"></div>
         </div>
     )
 }
