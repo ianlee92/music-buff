@@ -15,7 +15,7 @@ function BookPage() {
                 }
             })
     }, [])
-    console.log(Product)
+
 
     return (
         <div style={{ width: '100%', textAlign: 'center'}}>
@@ -31,7 +31,7 @@ function BookPage() {
                                     </div>
                                     <div className="productInfo">
                                         <div className="productName">{product.title}</div>
-                                        <div className="productPrice"><span className="proudctPriceSpan">{product.price}원</span></div>
+                                        <div className="productPrice"><span className="proudctPriceSpan">{product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원</span></div>
                                     </div>
                                 </a>
                             </div>

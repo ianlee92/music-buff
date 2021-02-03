@@ -12,16 +12,6 @@ function DetailProductPage(props) {
     const productId = props.match.params.productId
 
     const [Product, setProduct] = useState([])
-    // useEffect(() => {
-    //     axios.post('/api/product/products')
-    //         .then(response => {
-    //             if(response.data.success){
-    //                 setProduct(response.data.productInfo)
-    //             } else {
-    //                 alert("상품들을 가져오는데 실패 했습니다.")
-    //             }
-    //         })
-    // }, [])
 
     useEffect(() => {
         axios.get(`/api/product/products_by_id?id=${productId}&type=single`)
@@ -30,12 +20,6 @@ function DetailProductPage(props) {
             })
             .catch(err => alert(err))
     }, [])
-
-    const dispatch = useDispatch();
-    const clickHandler = () => {
-        dispatch(addToCart(Product.length>0 && Product[0]._id));
-        props.history.push('/user/cart')
-    }
 
     return (
         <div className="productContentDetail">
@@ -49,7 +33,7 @@ function DetailProductPage(props) {
                     </div>
                     <div className="productDetailInfo">
                         <div className="productDetailName">{Product.title}</div>
-                        <div className="productDetailPrice"><span className="proudctDetailPriceSpan">{Product.price}원</span></div>
+                        <div className="productDetailPrice"><span className="proudctDetailPriceSpan">{Product.price&&(Product.price).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원</span></div>
                         <div className="delivery"><span className="productDescriptionTitle">배송비</span><span className="deliverySub">3,000원 (50,000원 이상 구매 시 무료)</span></div>
                         <div className="count"><span className="productDescriptionTitle">수량</span></div>
                         <div className="countButton">

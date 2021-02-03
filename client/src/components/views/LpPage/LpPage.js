@@ -30,7 +30,7 @@ function LpPage() {
                                     </div>
                                     <div className="productInfo">
                                         <div className="productName">{product.title}</div>
-                                        <div className="productPrice"><span className="proudctPriceSpan">{product.price}원</span></div>
+                                        <div className="productPrice"><span className="proudctPriceSpan">{product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원</span></div>
                                     </div>
                                 </a>
                             </div>
