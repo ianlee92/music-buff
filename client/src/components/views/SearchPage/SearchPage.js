@@ -29,6 +29,7 @@ function SearchPage() {
     return (
         <div>
             <SearchMenu refreshFunction={updateSearchTerm}/>
+            {SearchTerm ?
             <div className="product-site-Wrap">
                 {Product.map((product, index) => {
                     return <div className="productWrapper" key={index}>
@@ -46,6 +47,8 @@ function SearchPage() {
                             </div>
                 })}
             </div>
+            : null
+            }
             <div className="product-end"></div>
         </div>
     )
