@@ -6,7 +6,6 @@ import UserCardBlock from './Sections/UserCardBlock';
 function CartPage(props) {
 
     const dispatch = useDispatch();
-    console.log('props.user', props.user)
     
     useEffect(() => {
         let cartItems = []

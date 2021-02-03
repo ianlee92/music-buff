@@ -4,11 +4,13 @@ import './UserCardBlock.scss';
 function UserCardBlock(props) {
     
     const renderItems = () => (
-        props.products && props.products.map(product => (
-            <tr>
+        props.products && props.products.map((product, index) => (
+            
+            <tr key={index}>
                 <td>
                     <img style={{width: '70px'}} alt="product"
-                    src={product.images} />
+                    src={product.images[0]} /><br></br>
+                    {product.title}
                 </td>
                 <td>
                     {product.quantity} EA
@@ -24,13 +26,14 @@ function UserCardBlock(props) {
             </tr>
         ))
     )
+    
 
     return (
         <div className="cardBlock">
             <table>
                 <thead>
                     <tr>
-                        <th>상품 이미지</th>
+                        <th>상품</th>
                         <th>수량</th>
                         <th>가격</th>
                         <th>삭제</th>

@@ -57,10 +57,7 @@ function DetailProductPage(props) {
                             <input type="number" min="1" value="1" readOnly="readonly"/>
                             <button type="button">-</button>
                         </div>
-                        <div className="cartDiv">
-                            <span className="cartButton"><button className="cartBtn" type="button">구매하기</button></span>
-                            <span className="cartButton"><button className="cartBtn2" type="button" onClick={clickHandler}>장바구니에 담기</button></span>
-                        </div>
+                        <Cart detail={Product}/>
                         <div className="productDescriptionSubject"><span className="productDescriptionTitle">상세정보</span></div>
                         <div className="productDescription">{Product.description}</div>
                     </div>

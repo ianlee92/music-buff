@@ -12,7 +12,7 @@ router.get('/auth', auth, (req, res)=>{
     //여기 까지 미들웨어를 통과해 왔다는 얘기는 Authentication이 true 라는 말
     res.status(200).json({
         _id: req.user._id,
-        isAdmin: req.user.role === 1 ? false : true,
+        isAdmin: req.user.role === 0 ? false : true,
         isAuth: true,
         email: req.user.email,
         name: req.user.name,
@@ -27,7 +27,7 @@ router.post('/register', (req, res) => {
     // 회원가입할때 필요한 정보들을 client에서 가져오면
     // 그것들을 데이터 베이스에 넣어준다.
     const user = new User(req.body)
-    user.save((err, userInfo)=>{
+    user.save((err, doc)=>{
         if(err) return res.json({ success: false, err})
         return res.status(200).json({
             success: true
@@ -55,6 +55,7 @@ router.post('/login', (req, res)=>{
                 if(err) return res.status(400).send(err);
 
                 // 토큰을 저장한다. 어디에? 쿠키, 로컬스토리지
+                res.cookie("w_authExp", user.tokenExp);
                 res.cookie("x_auth", user.token)
                 .status(200)
                 .json({loginSuccess: true, userId: user._id})
@@ -65,8 +66,8 @@ router.post('/login', (req, res)=>{
 
 router.get('/logout', auth, (req, res) => {
     User.findOneAndUpdate({ _id: req.user._id},
-        { token: ""},
-        (err, user) => {
+        { token: "", tokenExp: ""},
+        (err, doc) => {
             if(err) return res.json({success: false, err});
             return res.status(200).send({
                 success: true
@@ -84,11 +85,11 @@ router.post('/addToCart', auth, (req, res) => {
                 }
             })
 
-            if(duplicate) { //이미 상품이 있을 때
+            if(duplicate) { // 이미 상품이 있을 때
                 User.findOneAndUpdate(
                     { _id: req.user._id, "cart.id": req.body.productId },
                     { $inc : {"cart.$.quantity" : 1} },
-                    { new: true },
+                    { new: true }, // 업데이트 정보
                     (err, userInfo) => {
                         if(err) return res.status(200).json({success:false, err})
                         res.status(200).send(userInfo.cart)

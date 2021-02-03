@@ -3,7 +3,7 @@ import {Switch, Route} from "react-router-dom";
 import LandingPage from './views/LandingPage/LandingPage';
 import LoginPage from './views/LoginPage/LoginPage';
 import RegisterPage from './views/RegisterPage/RegisterPage';
-import Auth from '../hoc/auth'
+import Auth from '../hoc/auth';
 import NavBar from "./views/NavBar/NavBar";
 import Footer from "./views/Footer/Footer";
 import TurntablePage from './views/TurntablePage/TurntablePage';

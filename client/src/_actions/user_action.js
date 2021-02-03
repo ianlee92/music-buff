@@ -5,12 +5,13 @@ import {
     REGISTER_USER,
     AUTH_USER,
     LOGOUT_USER,
-    ADD_TO_CART,
-    GET_CART_ITEMS
+    ADD_TO_CART_USER,
+    GET_CART_ITEMS_USER
 } from './types';
+import { USER_SERVER } from '../components/Config.js';
 
 export function loginUser(dataToSubmit) {
-    const request = axios.post('/api/users/login', dataToSubmit)
+    const request = axios.post(`${USER_SERVER}/login`, dataToSubmit)
     .then(response => response.data);
 
     return {
@@ -20,7 +21,7 @@ export function loginUser(dataToSubmit) {
 }
 
 export function registerUser(dataToSubmit) {
-    const request = axios.post('/api/users/register', dataToSubmit)
+    const request = axios.post(`${USER_SERVER}/register`, dataToSubmit)
     .then(response => response.data);
 
     return {
@@ -30,7 +31,7 @@ export function registerUser(dataToSubmit) {
 }
 
 export function auth() {
-    const request = axios.get('/api/users/auth')
+    const request = axios.get(`${USER_SERVER}/auth`)
     .then(response => response.data);
 
     return {
@@ -40,7 +41,7 @@ export function auth() {
 }
 
 export function logoutUser(){
-    const request = axios.get('/api/users/logout')
+    const request = axios.get(`${USER_SERVER}/logout`)
     .then(response => response.data);
 
     return {
@@ -53,11 +54,11 @@ export function addToCart(id) {
     let body = {
         productId : id
     }
-    const request = axios.post('/api/users/addToCart', body)
+    const request = axios.post(`${USER_SERVER}/addToCart`, body)
     .then(response => response.data);
     
     return {
-        type: ADD_TO_CART,
+        type: ADD_TO_CART_USER,
         payload: request
     }
 }
@@ -68,14 +69,14 @@ export function getCartItems(cartItems, userCart) {
         userCart.forEach(cartItem => {
             response.data.forEach((productDetail, index) => {
                 if(cartItem.id === productDetail._id) {
-                    response.data[index].quantity = cartItem.quantity
+                    response.data[index].quantity = cartItem.quantity;
                 }
             }) 
         })
         return response.data;
     });
     return {
-        type: GET_CART_ITEMS,
+        type: GET_CART_ITEMS_USER,
         payload: request
     }
 }
