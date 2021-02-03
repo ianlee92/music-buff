@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { useDispatch } from 'react-redux';
-import { getCartItems } from '../../../_actions/user_action';
+import { getCartItems, removeCartItem } from '../../../_actions/user_action';
 import UserCardBlock from './Sections/UserCardBlock';
 
 function CartPage(props) {
@@ -30,10 +30,18 @@ function CartPage(props) {
         setTotal(total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
         
     }
+
+    let removeFromCart = (productId) => {
+        dispatch(removeCartItem(productId))
+        .then(response => {
+
+        })
+    }
+
     return (
         <div style={{ width: '85%', margin: '3rem auto'}}>
             <div>
-                <UserCardBlock products={props.user.cartDetail}/>
+                <UserCardBlock products={props.user.cartDetail} removeItem={removeFromCart} />
             </div>
             <div style ={{marginTop: '3rem'}}>
                 <h2> 합계: {Total}원</h2>

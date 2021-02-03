@@ -16,10 +16,10 @@ function UserCardBlock(props) {
                     {product.quantity} EA
                 </td>
                 <td>
-                    {product.price} 원
+                    {product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} 원
                 </td>
                 <td>
-                    <button>
+                    <button onClick={() => props.removeItem(product._id)}>
                         Remove
                     </button>
                 </td>

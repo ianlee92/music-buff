@@ -8,7 +8,7 @@ function Cart(props) {
     const dispatch = useDispatch();
     const clickHandler = () => {
         dispatch(addToCart(props.detail._id))
-        props.history.push('/user/cart')
+        //props.history.push('/user/cart')
     }
 
     return (
