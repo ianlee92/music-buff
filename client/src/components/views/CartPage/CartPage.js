@@ -8,7 +8,8 @@ function CartPage(props) {
     const dispatch = useDispatch();
     const [Total, setTotal] = useState(0)
     const [ShowTotal, setShowTotal] = useState(false)
-
+    const [DeliveryFee, setDeliveryFee] = useState(0)
+    const [DeliveryTotal, setDeliveryTotal] = useState(0)
     useEffect(() => {
         let cartItems = []
 
@@ -29,6 +30,8 @@ function CartPage(props) {
         cartDetail.map(item => {
             total += parseInt(item.price,10) * item.quantity
         })
+        setDeliveryFee(total)
+        setDeliveryTotal(total+3000)
         setTotal(total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
         setShowTotal(true)
     }
@@ -41,7 +44,9 @@ function CartPage(props) {
             }
         })
     }
-
+    
+    console.log(DeliveryTotal)
+    
     return (
         <div style={{ width: '85%', margin: '3rem auto'}}>
             <div>
@@ -49,7 +54,12 @@ function CartPage(props) {
             </div>
             {ShowTotal ?
                 <div style ={{margin:'0 auto', maxWidth: '980px', position: 'relative', height:'100%', textAlign: 'right'}}>
-                    <h2> 합계: {Total}원</h2>
+                    {
+                        DeliveryFee < 50000 ?
+                        <div style={{fontSize:'12px', lineHeight:'1.2em', color:'#121111', fontFamily:'Arial, sans-serif', fontWeight:'500', letterSpacing:'0.01em' }}><br/><br/>배송비: 3,000원 (50,000원 이상 구매 시 무료)<br/><h1>합계: {DeliveryTotal}원</h1></div>
+                        : <h2> 합계: {Total}원</h2>
+                    }
+                    <br/>
                     <img src="https://lh3.googleusercontent.com/proxy/FCkAoJlVTsC2AHFGLh_Tpic7yNosV28aomaYcyv2eDIJ2VFA7zdaGbuReuCdpM51tTJNkYSiQDOK6k8slPQ_7-xeD1SO3V7oHFLFUxi3cA6WuYtRvAE" style={{width:'170px', height:'60px', cursor:'pointer'}} alt="kakaopay"/>
                 </div>
                 :
@@ -58,7 +68,6 @@ function CartPage(props) {
                 <img src="https://png.pngtree.com/png-vector/20190628/ourmid/pngtree-empty-box-icon-for-your-project-png-image_1520407.jpg" alt="emptyimage" description={false} />
                 </div>
             }
-            
         </div>
     )
 }

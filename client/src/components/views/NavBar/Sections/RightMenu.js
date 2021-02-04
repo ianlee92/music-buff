@@ -5,6 +5,7 @@ import {UserOutlined, SearchOutlined, LockOutlined, ShoppingCartOutlined, Unlock
 import { USER_SERVER } from '../../../Config';
 import { useSelector } from "react-redux";
 import { withRouter } from 'react-router-dom';
+import {Badge} from 'antd';
 
 function RightMenu(props) {
     const user = useSelector(state => state.user)
@@ -33,7 +34,7 @@ function RightMenu(props) {
                 <ul className="icon-container">
                     <li className="icon-item"><a href="/search"><SearchOutlined style={{fontSize:'20px'}}/></a></li>
                     <li className="icon-item"><UserOutlined style={{fontSize:'20px', marginLeft:'10px'}}/></li>
-                    <li className="icon-item"><a href="/user/cart"><ShoppingCartOutlined style={{fontSize:'21px', marginLeft:'10px'}}/></a></li>
+                    <li className="icon-item"><a href="/user/cart"><ShoppingCartOutlined style={{fontSize:'21px', marginLeft:'10px'}}/></a>{user.userData && user.userData.cart.length}</li>
                     <li className="icon-item" onClick={logoutHandler}><UnlockOutlined style={{fontSize:'20px', marginLeft:'10px'}}/></li>
                 </ul>
      
