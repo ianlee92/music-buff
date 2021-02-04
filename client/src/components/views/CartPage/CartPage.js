@@ -10,6 +10,7 @@ function CartPage(props) {
     const [ShowTotal, setShowTotal] = useState(false)
     const [DeliveryFee, setDeliveryFee] = useState(0)
     const [DeliveryTotal, setDeliveryTotal] = useState(0)
+    const [DeliveryCondition, setDeliveryCondition] = useState(0)
     useEffect(() => {
         let cartItems = []
 
@@ -31,7 +32,8 @@ function CartPage(props) {
             total += parseInt(item.price,10) * item.quantity
         })
         setDeliveryFee(total)
-        setDeliveryTotal(total+3000)
+        setDeliveryTotal((total+3000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+        setDeliveryCondition((50000-total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
         setTotal(total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
         setShowTotal(true)
     }
@@ -44,9 +46,11 @@ function CartPage(props) {
             }
         })
     }
-    
-    console.log(DeliveryTotal)
-    
+
+    let cartCount = () => {
+        
+    }
+
     return (
         <div style={{ width: '85%', margin: '3rem auto'}}>
             <div>
@@ -56,11 +60,11 @@ function CartPage(props) {
                 <div style ={{margin:'0 auto', maxWidth: '980px', position: 'relative', height:'100%', textAlign: 'right'}}>
                     {
                         DeliveryFee < 50000 ?
-                        <div style={{fontSize:'12px', lineHeight:'1.2em', color:'#121111', fontFamily:'Arial, sans-serif', fontWeight:'500', letterSpacing:'0.01em' }}><br/><br/>배송비: 3,000원 (50,000원 이상 구매 시 무료)<br/><h1>합계: {DeliveryTotal}원</h1></div>
+                        <div style={{fontSize:'12px', lineHeight:'1.2em', color:'#121111', fontFamily:'Arial, sans-serif', fontWeight:'500', letterSpacing:'0.01em' }}><br/><br/>{DeliveryCondition}원 추가 구매시 배송비 무료!<br/>(50,000원 이상 구매 시)<br/><h1>합계: {DeliveryTotal}원</h1></div>
                         : <h2> 합계: {Total}원</h2>
                     }
                     <br/>
-                    <img src="https://lh3.googleusercontent.com/proxy/FCkAoJlVTsC2AHFGLh_Tpic7yNosV28aomaYcyv2eDIJ2VFA7zdaGbuReuCdpM51tTJNkYSiQDOK6k8slPQ_7-xeD1SO3V7oHFLFUxi3cA6WuYtRvAE" style={{width:'170px', height:'60px', cursor:'pointer'}} alt="kakaopay"/>
+                    <img src="https://lh3.googleusercontent.com/proxy/FCkAoJlVTsC2AHFGLh_Tpic7yNosV28aomaYcyv2eDIJ2VFA7zdaGbuReuCdpM51tTJNkYSiQDOK6k8slPQ_7-xeD1SO3V7oHFLFUxi3cA6WuYtRvAE" style={{width:'150px', height:'60px', cursor:'pointer'}} alt="kakaopay"/>
                 </div>
                 :
                 <div style={{textAlign:'center'}}>

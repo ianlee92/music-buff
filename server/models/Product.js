@@ -32,6 +32,10 @@ const productSchema = mongoose.Schema({
     views: {
         type: Number,
         default: 0
+    },
+    kind: {
+        type: String,
+        maxlength: 50
     }
 }, { timestamps: true });
 

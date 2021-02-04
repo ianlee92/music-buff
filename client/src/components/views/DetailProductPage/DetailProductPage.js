@@ -5,14 +5,14 @@ import axios from 'axios';
 import './DetailProductPage.scss';
 import QandA from '../../Util/QandA';
 import { withRouter } from 'react-router-dom';
-import Cart from '../../Util/Cart';
+import Cart from '../CartPage/Sections/Cart';
 
 function DetailProductPage(props) {
 
     const productId = props.match.params.productId
 
     const [Product, setProduct] = useState([])
-
+    const [Quantity, setQuantity] = useState(1)
     useEffect(() => {
         axios.get(`/api/product/products_by_id?id=${productId}&type=single`)
             .then(response => {
@@ -20,6 +20,17 @@ function DetailProductPage(props) {
             })
             .catch(err => alert(err))
     }, [])
+    
+    const addHandler = () => {
+        setQuantity(Quantity+1);
+    }
+    const minusHandler = () => {
+        setQuantity(Quantity-1);
+    }
+
+    const quantityHandler = (event) => {
+        setQuantity(event.currentTarget.value)
+    }
 
     return (
         <div className="productContentDetail">
@@ -37,11 +48,11 @@ function DetailProductPage(props) {
                         <div className="delivery"><span className="productDescriptionTitle">배송비</span><span className="deliverySub">3,000원 (50,000원 이상 구매 시 무료)</span></div>
                         <div className="count"><span className="productDescriptionTitle">수량</span></div>
                         <div className="countButton">
-                            <button type="button">+</button>
-                            <input type="number" min="1" value="1" readOnly="readonly"/>
-                            <button type="button">-</button>
+                            <button type="button" onClick={addHandler}>+</button>
+                            <input onChange={quantityHandler} style={{textAlign:'center'}} type="number" value={Quantity}/>
+                            <button type="button" onClick={minusHandler}>-</button>
                         </div>
-                        <Cart detail={Product}/>
+                        <Cart detail={Product} quantity={Quantity}/>
                         <div className="productDescriptionSubject"><span className="productDescriptionTitle">상세정보</span></div>
                         <div className="productDescription">{Product.description}</div>
                     </div>

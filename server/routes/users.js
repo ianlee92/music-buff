@@ -88,7 +88,7 @@ router.post('/addToCart', auth, (req, res) => {
             if(duplicate) { // 이미 상품이 있을 때
                 User.findOneAndUpdate(
                     { _id: req.user._id, "cart.id": req.body.productId },
-                    { $inc : {"cart.$.quantity" : 1} },
+                    { $inc : {"cart.$.quantity" : req.body.quantity} },
                     { new: true }, // 업데이트 정보
                     (err, userInfo) => {
                         if(err) return res.status(200).json({success:false, err})
@@ -102,7 +102,7 @@ router.post('/addToCart', auth, (req, res) => {
                         $push: {
                             cart: {
                                 id: req.body.productId,
-                                quantity: 1,
+                                quantity: req.body.quantity,
                                 date: Date.now()
                             }
                         }

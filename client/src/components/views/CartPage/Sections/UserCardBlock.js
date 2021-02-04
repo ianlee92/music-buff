@@ -1,21 +1,39 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './UserCardBlock.scss';
 
 function UserCardBlock(props) {
+
+    const [Quantity, setQuantity] = useState("")
     
+    const addHandler = () => {
+        setQuantity(Quantity+1);
+    }
+
+    const minusHandler = () => {
+        setQuantity(Quantity-1);
+    }
+
+    const quantityHandler = (event) => {
+        setQuantity(event.currentTarget.value)
+    }
+
+    console.log(Quantity)
     const renderItems = () => (
         props.products && props.products.map((product, index) => (
-            
             <tr key={index}>
                 <td>
-                    <img style={{width: '70px'}} alt="product"
-                    src={product.images[0]} />
+                    <a href={`/${product.kind}/${product._id}`}><img style={{width: '70px'}} alt="product"
+                    src={product.images[0]} /></a>
                 </td>
                 <td>
-                    {product.title}
+                    <a href={`/${product.kind}/${product._id}`} style={{textDecoration:'none'}}>{product.title}</a>
                 </td>
                 <td>
-                    {product.quantity} EA
+                    <div className="carCountButton">
+                        <button type="button" onClick={addHandler}>+</button>
+                        <input onChange={quantityHandler} style={{textAlign:'center'}} type="number" min='0' value={product.quantity}/>
+                        <button type="button" onClick={minusHandler}>-</button>
+                    </div>
                 </td>
                 <td>
                     {product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} 원
