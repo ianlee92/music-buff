@@ -9,7 +9,9 @@ function UserCardBlock(props) {
             <tr key={index}>
                 <td>
                     <img style={{width: '70px'}} alt="product"
-                    src={product.images[0]} /><br></br>
+                    src={product.images[0]} />
+                </td>
+                <td>
                     {product.title}
                 </td>
                 <td>
@@ -19,21 +21,22 @@ function UserCardBlock(props) {
                     {product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} 원
                 </td>
                 <td>
-                    <button onClick={() => props.removeItem(product._id)}>
-                        Remove
+                    <button className="deleteButton" onClick={() => props.removeItem(product._id)}>
+                        X
                     </button>
                 </td>
             </tr>
         ))
     )
     
-
     return (
-        <div className="cardBlock">
+        <div className="cardBlock" style={{marginTop:'220px'}}>
+            <h2>장바구니</h2>
             <table>
                 <thead>
                     <tr>
-                        <th>상품</th>
+                        <th>상품이미지</th>
+                        <th>상품명</th>
                         <th>수량</th>
                         <th>가격</th>
                         <th>삭제</th>

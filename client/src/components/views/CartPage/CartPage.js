@@ -48,8 +48,9 @@ function CartPage(props) {
                 <UserCardBlock products={props.user.cartDetail} removeItem={removeFromCart} />
             </div>
             {ShowTotal ?
-                <div style ={{marginTop: '3rem'}}>
+                <div style ={{margin:'0 auto', maxWidth: '980px', position: 'relative', height:'100%', textAlign: 'right'}}>
                     <h2> 합계: {Total}원</h2>
+                    <img src="https://lh3.googleusercontent.com/proxy/FCkAoJlVTsC2AHFGLh_Tpic7yNosV28aomaYcyv2eDIJ2VFA7zdaGbuReuCdpM51tTJNkYSiQDOK6k8slPQ_7-xeD1SO3V7oHFLFUxi3cA6WuYtRvAE" style={{width:'170px', height:'60px', cursor:'pointer'}} alt="kakaopay"/>
                 </div>
                 :
                 <div style={{textAlign:'center'}}>

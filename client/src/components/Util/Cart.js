@@ -10,10 +10,14 @@ function Cart(props) {
         dispatch(addToCart(props.detail._id))
         //props.history.push('/user/cart')
     }
+    const clickHandler2 = () => {
+        dispatch(addToCart(props.detail._id))
+        props.history.push('/user/cart')
+    }
 
     return (
             <div className="cartDiv">
-                <span className="cartButton"><button className="cartBtn" type="button">구매하기</button></span>
+                <span className="cartButton"><button className="cartBtn" type="button" onClick={clickHandler2}>구매하기</button></span>
                 <span className="cartButton"><button className="cartBtn2" type="button" onClick={clickHandler}>장바구니에 담기</button></span>
             </div>
     )
