@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import { useDispatch } from 'react-redux';
 import { getCartItems, removeCartItem, increaseItem } from '../../../_actions/user_action';
 import UserCardBlock from './Sections/UserCardBlock';
-
+import Paypal from '../../Util/Paypal';
 function CartPage(props) {
 
     const dispatch = useDispatch();
@@ -11,6 +11,7 @@ function CartPage(props) {
     const [DeliveryFee, setDeliveryFee] = useState(0)
     const [DeliveryTotal, setDeliveryTotal] = useState(0)
     const [DeliveryCondition, setDeliveryCondition] = useState(0)
+    const [FinalTotal, setFinalTotal] = useState(0)
     useEffect(() => {
         let cartItems = []
 
@@ -35,6 +36,14 @@ function CartPage(props) {
         setDeliveryTotal((total+3000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
         setDeliveryCondition((50000-total).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
         setTotal(total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+        
+        if(total&&total<50000){
+            setFinalTotal((total+3000)/1000)
+        } else {
+            setFinalTotal(total/1000)
+        }
+        console.log(FinalTotal)
+
         setShowTotal(true)
     }
 
@@ -68,7 +77,8 @@ function CartPage(props) {
                         : <h2> 합계: {Total}원</h2>
                     }
                     <br/>
-                    <img src="https://file.mk.co.kr/meet/neds/2018/10/image_readtop_2018_613493_15384276623477538.jpg" style={{width:'150px', height:'60px', cursor:'pointer'}} alt="kakaopay"/>
+                    
+                    <Paypal total={FinalTotal}/>
                 </div>
                 :
                 <div style={{textAlign:'center'}}>
