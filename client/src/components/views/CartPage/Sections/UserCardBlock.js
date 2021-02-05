@@ -1,23 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import { useDispatch } from 'react-redux';
 import './UserCardBlock.scss';
+import { getCartItems } from '../../../../_actions/user_action';
 
 function UserCardBlock(props) {
 
-    const [Quantity, setQuantity] = useState("")
-    
-    const addHandler = () => {
-        setQuantity(Quantity+1);
-    }
-
-    const minusHandler = () => {
-        setQuantity(Quantity-1);
-    }
-
-    const quantityHandler = (event) => {
-        setQuantity(event.currentTarget.value)
-    }
-
-    console.log(Quantity)
     const renderItems = () => (
         props.products && props.products.map((product, index) => (
             <tr key={index}>
@@ -29,10 +16,11 @@ function UserCardBlock(props) {
                     <a href={`/${product.kind}/${product._id}`} style={{textDecoration:'none'}}>{product.title}</a>
                 </td>
                 <td>
-                    <div className="carCountButton">
-                        <button type="button" onClick={addHandler}>+</button>
-                        <input onChange={quantityHandler} style={{textAlign:'center'}} type="number" min='0' value={product.quantity}/>
-                        <button type="button" onClick={minusHandler}>-</button>
+                    <div className="cartCountButton">
+                        {product.quantity} EA
+                        {/* <button type="button" onClick={() => props.increaseCart(product._id)}>+</button> */}
+                        {/* <input style={{textAlign:'center'}} type="number" min='0' value={product.quantity}/> */}
+                        {/* <button type="button" onClick={minusHandler}>-</button> */}
                     </div>
                 </td>
                 <td>
@@ -47,6 +35,8 @@ function UserCardBlock(props) {
         ))
     )
     
+    
+
     return (
         <div className="cardBlock" style={{marginTop:'220px'}}>
             <h2>장바구니</h2>

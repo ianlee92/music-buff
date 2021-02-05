@@ -21,6 +21,7 @@ function DetailProductPage(props) {
             .catch(err => alert(err))
     }, [])
     
+    
     const addHandler = () => {
         setQuantity(Quantity+1);
     }

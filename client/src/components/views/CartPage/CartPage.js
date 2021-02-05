@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { useDispatch } from 'react-redux';
-import { getCartItems, removeCartItem } from '../../../_actions/user_action';
+import { getCartItems, removeCartItem, increaseItem } from '../../../_actions/user_action';
 import UserCardBlock from './Sections/UserCardBlock';
 
 function CartPage(props) {
@@ -46,10 +46,14 @@ function CartPage(props) {
             }
         })
     }
-
-    let cartCount = () => {
-        
-    }
+    
+    // let increaseCart = (productId) => {
+    //     dispatch(increaseItem(productId))
+    //     .then(response => {
+            
+    //         }
+    //     )
+    // }
 
     return (
         <div style={{ width: '85%', margin: '3rem auto'}}>
@@ -64,7 +68,7 @@ function CartPage(props) {
                         : <h2> 합계: {Total}원</h2>
                     }
                     <br/>
-                    <img src="https://lh3.googleusercontent.com/proxy/FCkAoJlVTsC2AHFGLh_Tpic7yNosV28aomaYcyv2eDIJ2VFA7zdaGbuReuCdpM51tTJNkYSiQDOK6k8slPQ_7-xeD1SO3V7oHFLFUxi3cA6WuYtRvAE" style={{width:'150px', height:'60px', cursor:'pointer'}} alt="kakaopay"/>
+                    <img src="https://file.mk.co.kr/meet/neds/2018/10/image_readtop_2018_613493_15384276623477538.jpg" style={{width:'150px', height:'60px', cursor:'pointer'}} alt="kakaopay"/>
                 </div>
                 :
                 <div style={{textAlign:'center'}}>

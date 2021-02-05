@@ -7,7 +7,8 @@ import {
     LOGOUT_USER,
     ADD_TO_CART_USER,
     GET_CART_ITEMS_USER,
-    REMOVE_CART_ITEMS
+    REMOVE_CART_ITEMS,
+    INCREASE_ITEMS
 } from '../_actions/types';
 
 export default function (state={}, action) {
@@ -26,10 +27,12 @@ export default function (state={}, action) {
             return { ...state, cartDetail: action.payload }
         case REMOVE_CART_ITEMS:
             return { ...state, cartDetail: action.payload.productInfo,
-                                userData:{
-                                    ...state.userData,
-                                    cart: action.payload.cart
-                                }}
+                userData:{
+                    ...state.userData,
+                    cart: action.payload.cart
+                }}
+        // case INCREASE_ITEMS:
+        //     return { ...state, userData: { ...state.userData, cart: action.payload} }
         default:
             return state;
     }

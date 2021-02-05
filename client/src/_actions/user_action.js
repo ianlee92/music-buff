@@ -7,7 +7,8 @@ import {
     LOGOUT_USER,
     ADD_TO_CART_USER,
     GET_CART_ITEMS_USER,
-    REMOVE_CART_ITEMS
+    REMOVE_CART_ITEMS,
+    INCREASE_ITEMS
 } from './types';
 import { USER_SERVER } from '../components/Config.js';
 
@@ -100,3 +101,14 @@ export function removeCartItem(productId) {
         payload: request
     }
 }
+
+// export function increaseItem(productId) {
+//     const request = axios.get(`/api/users/increaseCart?id=${productId}`)
+//     .then(response => response.data);
+
+//     return {
+//         type: INCREASE_ITEMS,
+//         payload: request
+//     }
+// }
+
