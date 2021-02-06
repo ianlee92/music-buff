@@ -16,6 +16,7 @@ import GoodsPage from './views/GoodsPage/GoodsPage';
 import DetailProductPage from './views/DetailProductPage/DetailProductPage';
 import CartPage from './views/CartPage/CartPage';
 import SearchPage from './views/SearchPage/SearchPage';
+import HistoryPage from './views/HistoryPage/HistoryPage';
 import {LoadingOutlined} from '@ant-design/icons';
 import "./App.scss";
 
@@ -43,6 +44,7 @@ function App() {
             <Route exact path="/goods/:productId" component={Auth(DetailProductPage, null)} />
             <Route exact path="/user/cart" component={Auth(CartPage, true)} />
             <Route exact path="/search" component={Auth(SearchPage, null)} />
+            <Route exact path="/history" component={Auth(HistoryPage, true)} />
             
           </Switch>
       <Footer />
