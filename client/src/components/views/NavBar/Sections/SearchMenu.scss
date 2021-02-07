@@ -1,10 +1,12 @@
+$subcolor: #939597;
+
 .search-division{
     padding-top:250px;
     padding-bottom:30px;
 }
 
 .search-container{
-    border:#939597 solid 1px;
+    border: $subcolor solid 1px;
     margin: 0 auto;
     max-width: 800px;
     position:relative;
@@ -17,7 +19,7 @@
     float:left;
     margin-left:12px;
     padding-top:7px;
-    color: #939597;
+    color: $subcolor;
     font-size: 40px;
     vertical-align:middle;
 }

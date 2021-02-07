@@ -1,3 +1,5 @@
+$subcolor: #939597;
+
 .cardBlock {
     margin: 0 auto;
     max-width: 980px;
@@ -30,7 +32,7 @@ th{
     cursor:pointer;
     border:none;
     background:none;
-    color: #939597;
+    color: $subcolor;
 }
 
 a{
@@ -48,7 +50,7 @@ a{
 
 .cartCountButton button{
     font-size:18px; 
-    border:#939597 solid 1px; 
+    border:$subcolor solid 1px; 
     background:none;
     height:22px;
     text-align:center;
@@ -62,7 +64,7 @@ a{
     vertical-align:middle;
     height:20px;
     padding: 0px;
-    border:#939597 solid 1px; 
+    border:$subcolor solid 1px; 
     background:none;
     width:30px;
     padding-left:2px;
