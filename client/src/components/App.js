@@ -45,7 +45,6 @@ function App() {
             <Route exact path="/user/cart" component={Auth(CartPage, true)} />
             <Route exact path="/search" component={Auth(SearchPage, null)} />
             <Route exact path="/history" component={Auth(HistoryPage, true)} />
-            
           </Switch>
       <Footer />
     </Suspense>
