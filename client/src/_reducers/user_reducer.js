@@ -8,7 +8,8 @@ import {
     ADD_TO_CART_USER,
     GET_CART_ITEMS_USER,
     REMOVE_CART_ITEMS,
-    INCREASE_ITEMS
+    INCREASE_ITEMS,
+    ON_SUCCESS_BUY
 } from '../_actions/types';
 
 export default function (state={}, action) {
@@ -33,6 +34,11 @@ export default function (state={}, action) {
                 }}
         // case INCREASE_ITEMS:
         //     return { ...state, userData: { ...state.userData, cart: action.payload} }
+        case ON_SUCCESS_BUY:
+            return { ...state, cartDetail: action.payload.cartDetail,
+            userData:{
+                ...state.userData, cart: action.payload.cart
+            }}
         default:
             return state;
     }

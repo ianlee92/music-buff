@@ -6,3 +6,4 @@ export const ADD_TO_CART_USER = "add_to_cart_user";
 export const GET_CART_ITEMS_USER = "get_cart_items_user";
 export const REMOVE_CART_ITEMS = "remove_cart_items";
 export const INCREASE_ITEMS = "increase_items";
+export const ON_SUCCESS_BUY = "on_success_buy";

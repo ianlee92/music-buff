@@ -33,7 +33,7 @@ function RightMenu(props) {
                 <ul className="icon-container">
                     <li className="icon-item"><a href="/search"><SearchOutlined style={{fontSize:'20px'}}/></a></li>
                     <li className="icon-item"><a href="/history"><UserOutlined style={{fontSize:'20px', marginLeft:'10px'}}/></a></li>
-                    <li className="icon-item"><a href="/user/cart"><ShoppingCartOutlined style={{fontSize:'21px', marginLeft:'10px'}}/></a>{user.userData && user.userData.cart.length}</li>
+                    <li className="icon-item"><a href="/user/cart"><ShoppingCartOutlined style={{fontSize:'21px', marginLeft:'10px'}}/></a></li>
                     <li className="icon-item" onClick={logoutHandler}><UnlockOutlined style={{fontSize:'20px', marginLeft:'10px'}}/></li>
                 </ul>
             

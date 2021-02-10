@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import { useDispatch } from 'react-redux';
-import { getCartItems, removeCartItem, increaseItem } from '../../../_actions/user_action';
+import { getCartItems, removeCartItem, increaseItem, onSuccessBuy } from '../../../_actions/user_action';
 import UserCardBlock from './Sections/UserCardBlock';
 import Paypal from '../../Util/Paypal';
 function CartPage(props) {
@@ -12,6 +12,8 @@ function CartPage(props) {
     const [DeliveryTotal, setDeliveryTotal] = useState(0)
     const [DeliveryCondition, setDeliveryCondition] = useState(0)
     const [FinalTotal, setFinalTotal] = useState(0)
+    const [ShowSuccess, setShowSuccess] = useState(false)
+
     useEffect(() => {
         let cartItems = []
 
@@ -64,11 +66,25 @@ function CartPage(props) {
     //     )
     // }
 
+    const transactionSuccess = (data) => {
+        dispatch(onSuccessBuy({
+            paymentData: data,
+            cartDetail: props.user.cartDetail
+        }))
+        .then(response => {
+            if(response.payload.success){
+                setShowTotal(false)
+                setShowSuccess(true)
+            }
+        })
+    }
+
     return (
         <div style={{ width: '85%', margin: '3rem auto'}}>
             <div>
                 <UserCardBlock products={props.user.cartDetail} removeItem={removeFromCart} />
             </div>
+            
             {ShowTotal ?
                 <div style ={{margin:'0 auto', maxWidth: '980px', position: 'relative', height:'100%', textAlign: 'right'}}>
                     {
@@ -78,10 +94,16 @@ function CartPage(props) {
                     }
                     <br/>
                     
-                    <Paypal total={FinalTotal}/>
+                    <Paypal total={FinalTotal}
+                            onSuccess={transactionSuccess}/>
                 </div>
-                :
-                <div style={{textAlign:'center'}}>
+                : ShowSuccess?
+                    <div style={{textAlign:'center'}}>
+                        <img src="https://freepikpsd.com/wp-content/uploads/2020/04/cart-png-Images-Free-Transparent.png" style={{width:'350px', height:'350px'}} alt="cartSuccess" /><br />
+                        🎉 주문이 성공적으로 완료되었습니다.
+                    </div>
+
+                : <div style={{textAlign:'center'}}>
                 <br />
                 <img src="https://png.pngtree.com/png-vector/20190628/ourmid/pngtree-empty-box-icon-for-your-project-png-image_1520407.jpg" alt="emptyimage" description={false} />
                 </div>

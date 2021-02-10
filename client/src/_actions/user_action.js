@@ -8,7 +8,8 @@ import {
     ADD_TO_CART_USER,
     GET_CART_ITEMS_USER,
     REMOVE_CART_ITEMS,
-    INCREASE_ITEMS
+    INCREASE_ITEMS,
+    ON_SUCCESS_BUY
 } from './types';
 import { USER_SERVER } from '../components/Config.js';
 
@@ -112,3 +113,11 @@ export function removeCartItem(productId) {
 //     }
 // }
 
+export function onSuccessBuy(data) {
+    const request = axios.post(`/api/users/successBuy`, data)
+    .then(response => response.data);
+    return {
+        type: ON_SUCCESS_BUY,
+        payload: request
+    }
+}
