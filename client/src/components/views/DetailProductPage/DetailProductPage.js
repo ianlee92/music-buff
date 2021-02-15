@@ -57,7 +57,7 @@ function DetailProductPage(props) {
                         <div className="productDescription">{Product.description}</div>
                     </div>
                     <Description />
-                    <QandA />
+                    {/* <QandA /> */}
                 </div>
             </div>
             <div className="product-detail-end"></div>

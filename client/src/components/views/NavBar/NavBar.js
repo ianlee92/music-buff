@@ -1,8 +1,19 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import './NavBar.scss';
 import RightMenu from './Sections/RightMenu'
 
 function NavBar() {
+    const [Scroll, setScroll] = useState(false);
+
+    const handleNavBg = () => {
+        const isTop = window.Scroll < 100;
+        setScroll(!isTop);
+    };
+
+    useEffect(() => {
+        document.addEventListener("scroll", handleNavBg);
+        return document.addEventListener("scroll", handleNavBg);
+    }, [])
     return (
         <div className="header-division-background">
             <div className="column-header-center">

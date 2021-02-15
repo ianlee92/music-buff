@@ -3,7 +3,7 @@ $subcolor: #939597;
 
 .header-division-background {
   flex-direction: row;
-  position: fixed;
+  position:absolute;
   height: 165px;
   width: 100%;
   box-sizing: border-box;
@@ -45,7 +45,7 @@ $subcolor: #939597;
 }
 
 .nav-container{
-  height: 55px;
+  height: 55px 100%;
   text-align: center;
   padding: 0;
   margin-top: 15px;
