@@ -45,7 +45,7 @@ function DetailProductPage(props) {
                     <div className="productDetailInfo">
                         <div className="productDetailName">{Product.title}</div>
                         <div className="productDetailPrice"><span className="proudctDetailPriceSpan">{Product.price&&(Product.price).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}원</span></div>
-                        <div className="delivery"><span className="productDescriptionTitle">배송비</span><span className="deliverySub">3,000원 (50,000원 이상 구매 시 무료)</span></div>
+                        <div className="delivery"><span className="productDescriptionTitle">배송비 3,000원</span><br /><span className="deliverySub">(50,000원 이상 구매 시 무료)</span></div>
                         <div className="count"><span className="productDescriptionTitle">수량</span></div>
                         <div className="countButton">
                             <button type="button" onClick={addHandler}>+</button>

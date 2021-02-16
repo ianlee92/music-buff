@@ -13,10 +13,22 @@
 
 .footer-info {
   text-align:center;
-  padding: 15px 15px 10px 0px;
+  padding: 10px 15px 10px 0px;
   color: black;
   font: 1.2em "Fira Sans", serif;
   font-size:12px;
   vertical-align: middle;
   text-align: center;
+}
+
+@media screen and (max-width: 467px) {
+  .footer-info {
+    text-align:center;
+    padding: 10px 15px 10px 0px;
+    color: black;
+    font: 1.2em "Fira Sans", serif;
+    font-size:10px;
+    vertical-align: middle;
+    text-align: center;
+  }
 }

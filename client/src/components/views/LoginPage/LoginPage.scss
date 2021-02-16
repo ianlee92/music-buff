@@ -93,3 +93,13 @@ $subcolor: #939597;
     max-width: 400px;
     width: 100%;
 }
+
+@media screen and (max-width: 430px) {
+    .login-field {
+        width: 100%;
+        max-width: 300px;
+        min-height: 100%;
+        text-align: center;
+        margin: 0px auto;
+    }
+}

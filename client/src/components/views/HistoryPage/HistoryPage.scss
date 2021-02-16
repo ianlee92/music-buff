@@ -4,3 +4,21 @@
     position:relative;
     height:100%;
 }
+
+@media screen and (max-width: 887px) {
+    .historyHead {
+        margin: 0 auto;
+        max-width: 600px;
+        position:relative;
+        height:100%;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .historyHead {
+        margin: 0 auto;
+        max-width: 350px;
+        position:relative;
+        height:100%;
+    }
+}

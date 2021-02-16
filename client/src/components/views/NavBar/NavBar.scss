@@ -33,6 +33,11 @@ $subcolor: #939597;
   background-color: white;
 }
 
+.logoImg{
+  width: 200px;
+  height: 120px;
+}
+
 .column-header-center-menu{
   clear: left;
   height: 55px;
@@ -118,4 +123,106 @@ $subcolor: #939597;
   border-bottom: 1px solid black;
   display:flex;
   justify-content: flex-end;
+}
+
+@media screen and (max-width: 887px) {
+  .logoImg{
+    width: 160px;
+    height: 100px;
+  }
+  .nav-container{
+    height: 55px 100%;
+    text-align: center;
+    padding: 0;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  .nav-item {
+    display: inline-block;
+    text-align: center;
+    margin-left: 8px;
+    padding: 20px 0px 10px 10px;
+    cursor: pointer;
+    color: $subcolor;
+    font: italic 1.2em "Fira Sans", serif;
+    font-size: 12px;
+    vertical-align: middle;
+    text-align: center;
+    list-style-type: none;
+  }
+  .column-header-right{
+    //background-color: green;
+    text-align: center;
+    padding-top: 15px;
+    padding-right: 100px;
+    float: center;
+  }
+}
+
+@media screen and (max-width: 758px) {
+  .logoImg{
+    width: 160px;
+    height: 100px;
+  }
+  .nav-container{
+    height: 55px 100%;
+    text-align: center;
+    padding: 0;
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  .nav-item {
+    display: inline-block;
+    text-align: center;
+    margin-left: 8px;
+    padding: 0px 10px 0px 0px;
+    cursor: pointer;
+    color: $subcolor;
+    font: italic 1.2em "Fira Sans", serif;
+    font-size: 12px;
+    vertical-align: middle;
+    text-align: center;
+    list-style-type: none;
+  }
+  .column-header-right{
+    //background-color: green;
+    text-align: center;
+    padding-top: 13px;
+    padding-right: 18px;
+    float: center;
+  }
+}
+
+@media screen and (max-width: 467px) {
+  .logoImg{
+    width: 140px;
+    height: 80px;
+    margin-left:30px;
+  }
+  .nav-container{
+    height: 55px 100%;
+    text-align: center;
+    padding: 0;
+    margin-top: -10px;
+    margin-left: 0px;
+  }
+  .nav-item {
+    display: inline-block;
+    text-align: center;
+    margin-left: 8px;
+    padding: 0px 0px 0px 0px;
+    cursor: pointer;
+    color: $subcolor;
+    font: italic 1.2em "Fira Sans", serif;
+    font-size: 10px;
+    vertical-align: middle;
+    list-style-type: none;
+  }
+  .column-header-right{
+    //background-color: green;
+    text-align: center;
+    padding-top: 13px;
+    padding-right: 18px;
+    float: center;
+  }
 }

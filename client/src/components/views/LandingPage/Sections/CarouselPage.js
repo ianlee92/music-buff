@@ -30,7 +30,7 @@ function Banner(props) {
                 </Typography>
 
                 <Button variant="outlined" className="ViewButton" href="./new">
-                    View Now
+                    View More
                 </Button>
             </CardContent>
         </Grid>

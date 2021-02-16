@@ -96,3 +96,13 @@ $subcolor: #939597;
     color: white;
     background-color: $maincolor;
 }
+
+@media screen and (max-width: 430px) {
+    .register-field {
+        width: 100%;
+        max-width: 300px;
+        min-height: 100%;
+        text-align: center;
+        margin: 0px auto;
+    }
+}

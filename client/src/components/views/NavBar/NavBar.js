@@ -18,7 +18,7 @@ function NavBar() {
         <div className="header-division-background">
             <div className="column-header-center">
                 <div className="column-header-center-logo">
-                    <a className="headerLogo" href="/"><img src='/logo.png' alt='logo' style={{ width:200, height:120}} /></a>
+                    <a className="headerLogo" href="/"><img className="logoImg" src='/logo.png' alt='logo'/></a>
                 </div>
                 <div className="column-header-center-menu">
                     <ul className="nav-container">
