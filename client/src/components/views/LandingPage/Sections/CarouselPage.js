@@ -9,12 +9,7 @@ import {
     CardMedia,
     Typography,
     Grid,
-    Button,
-    Checkbox,
-    FormControlLabel,
-    Radio,
-    RadioGroup,
-    Slider
+    Button
 } from '@material-ui/core';
 
 function Banner(props) {
@@ -22,7 +17,6 @@ function Banner(props) {
     const contentPosition = props.contentPosition ? props.contentPosition : "left"
     const totalItems = props.length ? props.length : 3;
     const mediaLength = totalItems - 1;
-
     let items = [];
     const content = (
         <Grid item xs={12 / totalItems} key="content">
@@ -35,7 +29,7 @@ function Banner(props) {
                     {props.item.Caption}
                 </Typography>
 
-                <Button variant="outlined" className="ViewButton">
+                <Button variant="outlined" className="ViewButton" href="./new">
                     View Now
                 </Button>
             </CardContent>

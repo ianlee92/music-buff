@@ -118,9 +118,11 @@ $huge-font-size: 40px;
             .ViewButton
             {
                 background-color: $almost-white;
-                color: $dark-red
+                color: $dark-red;
             }
         }
+
+        
 
         .Title
         {
@@ -133,7 +135,7 @@ $huge-font-size: 40px;
             margin-top: 10px;
             font-size: $bigger-font-size;
         }
-
+        
         .ViewButton
         {
             margin-top: 40px;
@@ -142,7 +144,6 @@ $huge-font-size: 40px;
             font-size: $header-font-size;
             border: 3px solid white;
             text-transform: capitalize;
-
             transition: 200ms;
         }
     }
