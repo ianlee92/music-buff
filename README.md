@@ -1,5 +1,6 @@
 # music buff | 뮤직 버프   
    
+[![[ MUSIC BUFF 🎵 | 뮤직 버프 ] 리액트 쇼핑몰 프로젝트 구현 동영상](http://img.youtube.com/vi/QhO1PFKYQO0/0.jpg)](https://youtu.be/QhO1PFKYQO0?t=0s)
 
 > 🎵 프로젝트 소개
 ------------
