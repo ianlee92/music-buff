@@ -29,9 +29,10 @@ $subcolor: #939597;
 }
 
 .searchBar{
+    margin-top:3px;
     margin-left:70px;
-    width: 90%;
-    height: 58px;
+    width: 80%;
+    height: 50px;
     border:none;
     font-size: 14px;
     line-height: 23px;
@@ -67,9 +68,10 @@ $subcolor: #939597;
     }
     
     .searchBar{
+        margin-top:3px;
         margin-left:70px;
-        width: 84%;
-        height: 57px;
+        width: 70%;
+        height: 50px;
         border:none;
         font-size: 14px;
         line-height: 23px;
@@ -78,39 +80,40 @@ $subcolor: #939597;
 
 @media screen and (max-width: 480px) {
     .search-division{
-    padding-top:250px;
-    padding-bottom:30px;
-}
+        padding-top:250px;
+        padding-bottom:30px;
+    }
 
-.search-container{
-    border: $subcolor solid 1px;
-    margin: 0 auto;
-    max-width: 300px;
-    position:relative;
-    text-align: center;
-    height:60px;
-    background-color: white;
-}
+    .search-container{
+        border: $subcolor solid 1px;
+        margin: 0 auto;
+        max-width: 300px;
+        position:relative;
+        text-align: center;
+        height:60px;
+        background-color: white;
+    }
 
-.search-icon{
-    float:left;
-    margin-left:12px;
-    padding-top:7px;
-    color: $subcolor;
-    font-size: 36px;
-    vertical-align:middle;
-}
+    .search-icon{
+        float:left;
+        margin-left:12px;
+        padding-top:7px;
+        color: $subcolor;
+        font-size: 36px;
+        vertical-align:middle;
+    }
 
-.search-bar{
-    float:flex;
-}
+    .search-bar{
+        float:flex;
+    }
 
-.searchBar{
-    margin-left:60px;
-    width: 77%;
-    height: 58px;
-    border:none;
-    font-size: 14px;
-    line-height: 23px;
-}
+    .searchBar{
+        margin-top:3px;
+        margin-left:60px;
+        width: 60%;
+        height: 50px;
+        border:none;
+        font-size: 14px;
+        line-height: 23px;
+    }
 }

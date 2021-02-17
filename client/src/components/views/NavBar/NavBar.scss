@@ -175,7 +175,7 @@ $subcolor: #939597;
     display: inline-block;
     text-align: center;
     margin-left: 8px;
-    padding: 0px 10px 0px 0px;
+    padding: 0px 5px 0px 0px;
     cursor: pointer;
     color: $subcolor;
     font: italic 1.2em "Fira Sans", serif;
@@ -187,7 +187,7 @@ $subcolor: #939597;
   .column-header-right{
     //background-color: green;
     text-align: center;
-    padding-top: 13px;
+    padding-top: 3px;
     padding-right: 18px;
     float: center;
   }
@@ -203,7 +203,7 @@ $subcolor: #939597;
     height: 55px 100%;
     text-align: center;
     padding: 0;
-    margin-top: -10px;
+    margin-top: 0px;
     margin-left: 0px;
   }
   .nav-item {
@@ -221,8 +221,9 @@ $subcolor: #939597;
   .column-header-right{
     //background-color: green;
     text-align: center;
-    padding-top: 13px;
+    padding-top: 3px;
     padding-right: 18px;
     float: center;
   }
+
 }

@@ -120,3 +120,21 @@ $subcolor: #939597;
         width: 100%; height: 50px;
     }
 }
+
+@media screen and (max-width: 468px) {
+    .contents02, .contents01{
+        margin-bottom:20px;
+    }
+
+    
+    .cartButton {
+        font-size:10px; 
+        background:none;
+        width:10px;
+        height:30px;
+        margin-left:0px;
+        margin-right:20px;
+        margin-bottom:0px;
+        cursor:pointer;
+    }
+}

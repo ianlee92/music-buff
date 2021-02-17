@@ -35,10 +35,7 @@ function LoginPage(props) {
     }
 
     return (
-        <div className="login-field" style={{
-            display: 'flex', justifyContent: 'center', alignItems: 'center'
-            ,width: '100%', height: '100vh'
-        }}>
+        <div className="login-field">
             <form className="login-form" onSubmit={onSubmitHandler}>
                 <div className="login-header">
                     <span className="login-title">로그인</span>
@@ -58,7 +55,7 @@ function LoginPage(props) {
                 <div className="login-btnWrapper">
                     <button className="login-btn">로그인하기</button>
                 </div>
-                <div className="register-btnWrapper">
+                <div className="register-btnWrapper1">
                     <a className="btn_signup" href="/register">
                         <button type="button" className="login-btn">회원가입하기</button>
                     </a>
