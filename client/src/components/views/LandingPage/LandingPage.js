@@ -29,7 +29,7 @@ function LandingPage(props) {
             <CarouselPage/>
             <div className="fixed01"></div>
                 <div className="contents01">
-                    <h1 style={{marginBottom:'0px'}}>N E W</h1>
+                    <h1 className="h1font" style={{marginBottom:'0px'}}>N E W</h1>
                     {Product.filter(product =>(product.views===1)).map((product, index) => {
                         return <div className="productWrapper" key={index} style={{marginTop:'10px'}}>
                                     <a className="productLink" href={`/goods/${product._id}`} alt="">
@@ -50,7 +50,7 @@ function LandingPage(props) {
                 
                 <div className="fixed02"></div>
                 <div className="contents02">
-                <h1 style={{marginBottom:'0px'}}>M E G A Z I N E</h1>
+                <h1 className="h1font" style={{marginBottom:'0px'}}>M A G A Z I N E</h1>
                     {Product.filter(product =>(product.views===2)).map((product, index) => {
                         return <div className="productWrapper" key={index} style={{marginTop:'10px'}}>
                                     <a className="productLink" href={`/goods/${product._id}`} alt="">

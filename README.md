@@ -1,9 +1,9 @@
-# music buff | 뮤직 버프
+# music buff | 뮤직 버프   
    
 
 > 🎵 프로젝트 소개
 ------------
-#### React 기반의 쇼핑몰 사이트 구현
+#### React 기반의 쇼핑몰 사이트 구현   
    
 
 > 🎵 주요 기능
@@ -17,32 +17,32 @@
 > 🎵 사용 기술 스택
 ------------
 ### 💻 Front-end
-#### Programming Language : React, Redux, Javascript, Scss, Html
+#### Programming Language : React, Redux, Javascript, Scss, Html   
 ### 💻 Back-end
 #### Programming Language : Node
-#### DB : MongoDB
+#### DB : MongoDB   
    
 
 > 🎵 Hosting
 ------------
-#### Cloud Application Platform : Heroku
+#### Cloud Application Platform : Heroku   
    
 
 > 🎵 IDE
 ------------
-#### Visual Studio Code
+#### Visual Studio Code   
    
 
 > 🎵 데이터
 ------------
-#### Apple Music, Google, Aladin, Unsplash
+#### Apple Music, Google, Aladin, Unsplash   
    
 
 > 🎵 BI
 ------------
 ### Brand Color
 #### Primary Color : #F5dF4D
-#### Sub Color : #939597
+#### Sub Color : #939597   
    
 
 > 🎵 Project Manager
@@ -51,4 +51,4 @@
 #### Role: Front-end, Back-end, Photoshop
 #### git: https://github.com/ianlee92
 #### blog: https://iancoding.tistory.com
-#### e-mail: proyong@kakao.com
+#### e-mail: proyong@kakao.com   
