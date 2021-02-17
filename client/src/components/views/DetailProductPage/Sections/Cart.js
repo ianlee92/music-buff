@@ -7,7 +7,7 @@ import '../DetailProductPage.scss';
 function Cart(props) {
     const [Alert, setAlert] = useState(false)
     useEffect(() => {
-        let timer = setTimeout(()=>{setAlert(false)},13009999);
+        let timer = setTimeout(()=>{setAlert(false)},1300);
         return ()=>{clearTimeout(timer)}
     },[Alert]);
 

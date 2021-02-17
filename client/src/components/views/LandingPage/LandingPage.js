@@ -45,7 +45,7 @@ function LandingPage(props) {
                                     </a>
                                 </div>
                     })}
-                <span className="cartButton"><button className="cartBtn2" type="button" onClick={clickHandler}>상품 더 보기</button></span>
+                <span className="cartButton"><button className="cartBtn3" type="button" onClick={clickHandler}>상품 더 보기</button></span>
                 </div>
                 
                 <div className="fixed02"></div>
@@ -66,7 +66,7 @@ function LandingPage(props) {
                                     </a>
                                 </div>
                     })}
-                    <span className="cartButton"><button className="cartBtn2" type="button" onClick={clickHandler2}>상품 더 보기</button></span>
+                    <span className="cartButton"><button className="cartBtn3" type="button" onClick={clickHandler2}>상품 더 보기</button></span>
                 </div>
                 <div className="fixed03"></div>
                 

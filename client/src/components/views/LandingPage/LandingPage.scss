@@ -43,13 +43,13 @@ $subcolor: #939597;
     
 }
 
-.cartBtn2{
+.cartBtn3{
     font-size:15px; 
     border:black solid 1px; 
     background:none;
     width:150px;
     height:50px;
-    margin-left:50px;
+    margin-left:0px;
     margin-right:10px;
     margin-bottom:20px;
     cursor:pointer;
@@ -57,13 +57,13 @@ $subcolor: #939597;
     border: $subcolor solid 1px;
 }
 
-.cartBtn2:hover{
+.cartBtn3:hover{
     font-size:15px; 
     border: $subcolor solid 1px; 
     background:none;
     width:150px;
     height:50px;
-    margin-left:8px;
+    margin-left:0px;
     margin-right:10px;
     margin-bottom:20px;
     color: white;
@@ -125,13 +125,24 @@ $subcolor: #939597;
     .contents02{
         margin-top:20px;
     }
+    .cartBtn3{
+        width:130px;
+    }
+    
+    .cartBtn3:hover{
+        width:130px;
+    }
 }
 
 @media screen and (max-width: 468px) {
-    .contents02, .contents01{
+    .contents01{
         margin-bottom:20px;
     }
 
+    .contents02{
+        margin-bottom:20px;
+        margin-top:30px;
+    }
     
     .cartButton {
         font-size:10px; 
@@ -145,5 +156,34 @@ $subcolor: #939597;
     }
     .fixed01, .fixed02, .fixed03{
         display:none;
+    }
+    
+    .cartBtn3{
+        font-size:12px; 
+        border:black solid 1px; 
+        background:none;
+        width:100px;
+        height:40px;
+        margin-left:0px;
+        margin-right:0px;
+        margin-bottom:20px;
+        cursor:pointer;
+        color: $subcolor;
+        border: $subcolor solid 1px;
+    }
+    
+    .cartBtn3:hover{
+        font-size:12px; 
+        border: $subcolor solid 1px; 
+        background:none;
+        width:100px;
+        height:40px;
+        margin-left:0px;
+        margin-right:0px;
+        margin-bottom:20px;
+        color: white;
+        background-color: $subcolor;
+        transition:all .2s;
+        cursor:pointer;
     }
 }
