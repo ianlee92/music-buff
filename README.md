@@ -37,7 +37,8 @@
 #
 > 🎵 BI
 ------------
-### Brand Color
+### Brand Color (Pantone Color of the Year 2021)
+![캡처](https://imagesourceteam.com/wp-content/uploads/2021/01/pantone-banner-scaled.jpg)
 #### Primary Color : #F5dF4D
 #### Sub Color : #939597   
 #
