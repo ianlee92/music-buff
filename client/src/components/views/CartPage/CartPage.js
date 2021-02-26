@@ -57,14 +57,6 @@ function CartPage(props) {
             }
         })
     }
-    
-    // let increaseCart = (productId) => {
-    //     dispatch(increaseItem(productId))
-    //     .then(response => {
-            
-    //         }
-    //     )
-    // }
 
     const transactionSuccess = (data) => {
         dispatch(onSuccessBuy({
