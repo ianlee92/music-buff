@@ -141,54 +141,6 @@ router.get('/removeFromCart', auth, (req,res) => {
     )
 })
 
-// router.get('/increaseCart', auth, (req,res) => {
-//     User.findOneAndUpdate(
-//         { _id: req.user._id, "cart.id": req.body.productId },
-//         { $inc : {"cart.$.quantity" : 1 } },
-//         { new: true },
-//         (err, userInfo) => {
-//             if(err) return res.status(200).json({success:false, err})
-//             res.status(200).send(userInfo)
-//         }
-//         // (err, userInfo) => {
-//         //     let cart = userInfo.cart;
-//         //     let array = cart.map(item => {
-//         //         return item.id
-//         //     })
-
-//         //     Product.find({ _id: { $in: array }})
-//         //     .populate('writer')
-//         //     .exec((err, productInfo) => {
-//         //         return res.status(200).json({productInfo, cart})
-//         //     })
-//         // }
-//     )
-// })
-
-// router.get('/decreaseCart', auth, (req,res) => {
-//     User.findOneAndUpdate(
-//         { _id: req.user._id, "cart.id": req.body.productId },
-//         { $inc : {"cart.$.quantity" : -1 } },
-//         { new: true },
-//         // (err, userInfo) => {
-//         //     if(err) return res.status(200).json({success:false, err})
-//         //     res.status(200).send(userInfo.cart)
-//         // }
-//         (err, userInfo) => {
-//             let cart = userInfo.cart;
-//             let array = cart.map(item => {
-//                 return item.id
-//             })
-
-//             Product.find({ _id: { $in: array }})
-//             .populate('writer')
-//             .exec((err, productInfo) => {
-//                 return res.status(200).json({productInfo, cart})
-//             })
-//         }
-//     )
-// })
-
 router.post('/successBuy', auth, (req,res) => {
     let history= [];
     let transactionData = {};
